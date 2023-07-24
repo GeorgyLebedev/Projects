@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+	    rel="stylesheet"
+	    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="Styles/Main.css">
+    <title>TYNY 2019</title>
+</head>
+<body>
+<div class="root">
+    <!-- HEADER -->
+    <div class="header">
+	<div class="header-container">
+	    <div class="logo">
+		<span class="font-light ">TYNY</span> 2019
+	    </div>
+	    <nav class="nav-container">
+		<a class="pointer" href="#promo-block">Конференция</a>
+		<a class="pointer" href="#program-block">Программа</a>
+		<a class="pointer" href="#speakers-block">Спикеры</a>
+		<a class="pointer" href="#photos-block">Фото</a>
+		<a class="pointer" href="#materials-block">Материалы</a>
+		<button type="button" class="button-outline pointer" onclick="showRegModal()">Регистрация</button>
+	    </nav>
+	</div>
+	<div class="icons">
+	    <img src="Images/header/mail.svg" class="pointer" alt="" width="29">
+	    <img src="Images/header/f.svg" class="pointer" alt="" height="26">
+	</div>
+	<div class="menu pointer">
+	    <img src="Images/header/menuBtn.svg" id="show-menu-btn" width="25" alt="" onclick="setMenuVisible(true)">
+	    <img src="Images/header/Close.svg" id="close-menu-btn" hidden width="25" alt=""
+		 onclick="setMenuVisible(false)">
+	</div>
+    </div>
+    <!--MOBILE MENU -->
+    <div id="mobile-menu" class="menu-container">
+	<div class="menu-list">
+	    <a href="#promo-block">Конференция</a>
+	    <a href="#program-block">Программа</a>
+	    <a href="#speakers-block">Спикеры</a>
+	    <a href="#photos-block">Фото</a>
+	    <a href="#materials-block">Материалы</a>
+	    <button type="button" class="button-outline pointer" onclick="showRegModal()">Регистрация</button>
+	    <div class="icons-mobile">
+		<img src="Images/header/mail.svg" class="pointer mail-icon" alt="">
+		<img src="Images/header/f.svg" class="pointer facebook-icon" alt="">
+	    </div>
+	</div>
+    </div>
+    <!-- REGISTRATION MODAL BOX -->
+    <div id="reg-modal" class="modal-container" onclick="hideRegModal(event)">
+	<div id="reg-modal-win" class="modal-window">
+	    <div class="modal-content">
+		<div class="modal-title font-light">Регистрация</div>
+		<div class="modal-description">Обращаем ваше внимание на то, что мероприятие является закрытым. <br>
+		    Преимущественное право посетить мероприятие имеют представители компаний-
+		    рекламодателей и партнеров GroupM. В случае положительного решения письмо
+		    с билетом будет отправлено вам на Email, указанный при регистрации.
+		</div>
+		<div class="modal-form">
+		    <input type="text" id='rf-first-name' placeholder="Имя / First Name*">
+		    <input type="text" id="rf-last-name" placeholder="Фамилия / Last Name*">
+		    <input type="text" id="rf-company" placeholder="Компания / Company*">
+		    <input type="text" id="rf-job" placeholder="Должность / Job Title*">
+		    <input type="Email" id="rf-email" placeholder="Email*">
+		    <div class="checkbox-container">
+			<input type="checkbox" id="rf-agree" value="true" class="modal-checkbox">
+			<label for="rf-agree">Я согласен с &nbsp <a href=""> условиями использования</a></label></div>
+		    <button type="button" class="button-fill button-fill-modal pointer" onclick="validateRegForm()">
+			Регистрация
+		    </button>
+		</div>
+	    </div>
+	</div>
+    </div>
+    <!-- PROMO -->
+    <div id="promo-block-id" class="block-dark ">
+	<div class="promo">
+	    <a name="promo-block"></a>
+	    <div class="promo-top-container">
+		<div class="promo-left-content">
+		    <p class="font-default promo-label-orange">Конференция</p>
+		    <div>
+			<p class="font-light promo-label-date">12 ноября</p>
+			<div class="promo-label-large">
+			    <table>
+				<tr>
+				    <td>This</td>
+				    <td class="promo-this-year">Year</td>
+				</tr>
+				<tr>
+				    <td>Next</td>
+				    <td class="promo-next-year">Year</td>
+				</tr>
+			    </table>
+			</div>
+			<img src="Images/promo-block/companies.svg" class="promo-companies-list" alt=""><br>
+			<button type="button" class="button-fill pointer" onclick="showRegModal()">зарегистрироваться
+			</button>
+		    </div>
+		</div>
+		<div class="promo-right-content">
+		    <img src="Images/promo-block/dialogs.svg" class="promo-right-image" alt="">
+		</div>
+	    </div>
+	    <p class="promo-text1">
+		Команда рекламного холдинга GroupM рада открыть для вас двери digital-конференции NextM!
+	    </p>
+	    <p class="font-light promo-text2">
+		NextM – это ежегодная digital-конференция, организованная ведущей международной рекламной
+		группой GroupM, входящей в состав коммуникационного холдинга WPP и представленной в России
+		агентствами Mindshare, MediaCom и Wavemaker.
+	    </p>
+
+	</div>
+	<a class="promo-down-arrow pointer" href="#description-block">
+	    <img src="Images/promo-block/arrow-down.svg" width="87" alt="">
+	</a>
+    </div>
+    <!-- DESCRIPTION -->
+    <div id="description-block-id" class="block-light">
+	<a name="description-block"></a>
+	<div class="description">
+	    <div>
+		<h1 class="font-light description-title">
+		    Re-winning love of the empowered consumer
+		</h1>
+		<div class="font-light description-left-content">
+		    <p>NextM – это пространство, которое вдохновляет, открывает новые концепции и формирует
+			оригинальное
+			мышление. Главный вопрос конференции – это «What’s next»? и в этом году мы окажемся «по ту
+			сторону
+			черного зеркала».</p>
+		    <p>Технологии стремительно проникают в жизнь общества. Кажется, они дают практически
+			неограниченные
+			возможности влияния на мысли и образ жизни людей. Стоит ли бояться сценария, что «черное
+			зеркало»
+			технологий до неузнаваемости исказит человеческое общество? На конференции NextM мы докажем,
+			что
+			использование технологий должно быть «умным», а не только «хайповым» как для потребителей,
+			так и для
+			рекламодателей. Настало время нового восприятия инструментов, когда человек управляет
+			данными, а не
+			наоборот!</p>
+		    <p>Спасибо более чем 700 гостям, которые присоединяются к нам ежегодно на день обмена
+			digital-опытом.
+			По традиции российские и зарубежные эксперты поделятся реальными кейсами и свежими инсайтами
+			из
+			различных областей бизнеса и технологий.</p>
+		    <p>Ждем вас 25 июля в ЦМТ!</p>
+		</div>
+	    </div>
+	    <img src="Images/description-block/shapes.svg" class="description-right-image" alt="">
+	</div>
+    </div>
+    <!-- PROGRAM-->
+    <div id="program-block-id" class="block-dark">
+	<a name="program-block"></a>
+	<div class="program">
+	    <article class="program-left-content">
+		<h1 class="program-title font-light">Программа</h1>
+		<div class="program-list">
+		    <section class="program-list-elem">
+			10:00 <br>
+			<span class="program-theme-name">длинное название темы выступления участника</span>
+		    </section>
+		    <section class="program-list-elem">
+			10:00 <br>
+			<span class="program-theme-name">название темы выступления участника</span>
+			<span class="program-member-name font-light">Имя Фамилия</span>
+		    </section>
+		    <section class="program-list-elem">
+			10:00 <br>
+			<span class="program-theme-name">длинное название темы выступления участника</span>
+			<span class="program-member-name font-light">Имя Фамилия</span>
+		    </section>
+		    <section class="program-list-elem">
+			10:00 <br>
+			<span class="program-theme-name">название темы выступления участника</span>
+			<span class="program-member-name font-light">Имя Фамилия</span>
+			<a class="program-more-info-link" href="">
+			    Подробнее
+			</a>
+		    </section>
+		    <section class="program-list-elem">
+			10:00 <br>
+			<span class="program-theme-name">длинное название темы выступления участника</span>
+			<span class="program-member-name font-light">Имя Фамилия</span>
+		    </section>
+		    <section class="program-list-elem">
+			10:00 <br>
+			<span class="program-theme-name">длинное название темы выступления участника в две строки</span>
+			<span class="program-member-name font-light">Имя Фамилия</span>
+			<a class="program-more-info-link" href="">
+			    Подробнее
+			</a>
+		    </section>
+		</div>
+	    </article>
+	    <img src="Images/program-block/dialogs-big.svg" class="program-right-image" alt="">
+	</div>
+    </div>
+    <!-- SPEAKERS -->
+    <div id="speakers-block-id" class="block-light">
+	<a name="speakers-block"></a>
+	<div class="speakers">
+	    <h1 class="speakers-title font-light">
+		Спикеры
+	    </h1>
+	    <div class="speakers-swiper-container">
+		<div class="speakers-button-prev">
+		    <img src="Images/arrow-left.svg" class="speakers-swiper-arrow pointer" alt="">
+		</div>
+		<div class="swiper speakers-swiper">
+		    <div class="swiper-wrapper speakers-swiper-wrapper">
+			<!-- Slides -->
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <span class="speaker-company font-light">
+				CEO MediaCom
+			    </span>
+				</div>
+			    </div>
+			</div>
+			<div class="swiper-slide speakers-swiper-slide">
+			    <div class="speakers-slide-item">
+				<img src="Images/speakers-block/speaker.png" alt="">
+				<div class="speakers-slide-item-label">
+				    <p class="speaker-name">
+					Ярон Фаризон
+				    </p>
+				    <p class="speaker-company font-light">
+					CEO MediaCom
+				    </p>
+				</div>
+			    </div>
+			</div>
+		    </div>
+		    <div class="swiper-pagination speakers-swiper-pagination"></div>
+		</div>
+		<div class="speakers-button-next">
+		    <img src="Images/arrow-right.svg" class="speakers-swiper-arrow pointer" alt="">
+		</div>
+	    </div>
+	</div>
+    </div>
+    <!-- MATERIALS -->
+    <div id="materials-block-id" class="block-dark">
+	<a name="materials-block"></a>
+	<div class="materials">
+	    <div class="materials-left-content">
+		<h1 class="materials-title font-light">
+		    Материалы
+		</h1>
+		<article class="materials-list">
+		    <p>1. Интро</p>
+		    <p>2. Вступительное слово. Мария Колосова (GroupM)</p>
+		    <p>3. Beyond personalization. Jim Cridlin
+			(Mindshare)</p>
+		    <p>4. Будущее уже наступило, но распределено неравномерно. Наталия Балута (MediaCom),
+			Кирилл Никитин (MediaCom)</p>
+		    <p>5. Навыки, которые мы потеряем из-за развития технологий. Артур Хачуян
+			(Tazeros Global Systems)</p>
+		    <p>6. Рост бизнеса сегодня вместо экологической катастрофы завтра: как
+			инвестиции в устойчивое развитие помогают брендам. Любовь Серкова (Wavemaker), Яна Гурьянова
+			(ИКЕА)</p>
+		    <p>7.1. Мастерская – Influencer marketing. Иван Шавров (Wavemaker), Александра Кондраштина
+			(MediaCom)</p>
+		    <p>7.2. Мастерская – The one is the chosen one. Денис Шолохов (Wavemaker), Елена Перельдик
+			(Mindshare)</p>
+		    <p>7.3. Мастерская – Голос из будущего. Дмитрий Твердохлеб (Mindshare)</p>
+		    <p>7.4. Мастерская – Будущее eCommerce сегодня: как бренду усилить онлайн продажи без своего
+			магазина. Дмитрий Ануреев
+			(MediaCom), Григорий Богачев (MediaCom)</p>
+		    <p> 8. E-com everything. Андрей Марченко (Mindshare), Дмитрий
+			Антохин (Mindshare)</p>
+		    <p>9. Как технологии помогли мне переплыть Босфор. Дмитрий Игнатов (журналист,
+			паралимпиец)</p>
+		</article>
+	    </div>
+	    <img src="Images/materials-block/smartphone.svg" class="materials-right-image">
+	</div>
+    </div>
+    <!-- PHOTOS -->
+    <div id="photos-block-id" class="block-light">
+	<a name="photos-block"></a>
+	<div class="photos">
+	    <div class="photos-title font-light">Фотографии</div>
+	    <div class="photos-swiper-container">
+		<div class="photos-button-prev">
+		    <img src="Images/arrow-left.svg" class="photos-swiper-arrow pointer" alt="">
+		</div>
+		<div class="swiper photos-swiper">
+		    <div class="swiper-wrapper photos-swiper-wrapper">
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/2.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/2.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/2.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/2.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/2.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/2.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/2.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/3.png" alt="">
+			</div>
+			<div class="swiper-slide photos-swiper-slide">
+			    <img src="Images/photos-block/1.png" alt="">
+			</div>
+		    </div>
+		    <div class="swiper-pagination photos-swiper-pagination"></div>
+		</div>
+		<div class="photos-button-next">
+		    <img src="Images/arrow-right.svg" class="photos-swiper-arrow pointer" alt="">
+		</div>
+	    </div>
+
+	</div>
+    </div>
+    <!-- PARTNERS -->
+    <div id="partners-block-id" class="block-dark">
+	<img src="Images/partners-block/img-top.svg" class="partners-top-image">
+	<div class="partners">
+	    <h1 class="partners-title">
+		Партнеры
+	    </h1>
+	    <div class="partners-companies">
+		<img src="Images/partners-block/companies-big.svg" class="desktop-visible">
+		<img src="Images/partners-block/companies-med.svg" class="tablet-visible">
+		<img src="Images/partners-block/companies-sm.png" class="mobile-visible">
+	    </div>
+	    <h1 class="partners-title">Как добраться</h1>
+	</div>
+    </div>
+    <!-- MAP -->
+    <div class="map">
+	<script type="text/javascript" charset="utf-8" async
+		src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae657973c76200a18a15e5cb51e6a728e49b82132c4dbcfb554dec2a2cb78c193&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+    <!--FEEDBACK -->
+    <div id="feedback-block-id" class="block-dark">
+	<div class="feedback">
+	    <h1 class="feedback-title">Отправить сообщение</h1>
+	    <form class="feedback-form">
+		<section class="feedback-header">
+		    <input type="text" id="mf-name" placeholder="Ваше имя">
+		    <input type="email" id="mf-email" placeholder="Email">
+		</section>
+		<textarea placeholder="Ваше сообщение" id="mf-message"></textarea>
+		<button type="button" class="button-fill feedback-button-fill pointer" onclick="validateMsgForm()">
+		    Отправить
+		</button>
+		<section class="feedback-add-info font-light">
+		    info@groupmnextm.ru <br>
+		    <a class="feedback-phone font-light">
+			+7 (495) 641-40-80
+			<p class="font-light feedback-phone-call">
+			    Звоните нам бесплатно!
+			</p>
+		    </a>
+		</section>
+		<a href="" class="feedback-legal-info font-light">Правовая информация</a>
+	    </form>
+	</div>
+    </div>
+</div>
+<script type="text/javascript" src="Scripts/main.js"></script>
+</body>
+</html>
