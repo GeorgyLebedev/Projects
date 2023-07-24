@@ -1,0 +1,69 @@
+body {font-family:"Cambria Math";}
+h1{ text-align:center}
+.load{text-align:center}
+.norm{text-align:left}
+table { margin: auto;border-collapse: collapse;max-width:80%}
+td {border: 1px solid #82898f; min-width:75px}
+tbody tr:hover td {
+    background: #dbd7d2; /* Цвет фона при наведении */
+}
+ tbody tr:nth-child(odd){
+	background: #f5f5f5;
+}
+tbody tr:nth-child(even){
+	background: #e6e6e6;
+}
+canvas{max-width:65%;max-height:700px}
+.num{ background:#f5f5f5; border:none; text-align:right; padding-right:10px;min-width:auto}
+.norm{padding-left:20px; text-align:left}
+.b1{font-size:12pt;font-family:"Cambria Math";}
+.b1:enabled:hover {color:teal}
+.b2 {padding:10px}
+.data {text-align:center}
+.err {padding-left:20px; text-align:left; color:maroon; font-weight:bold; animation: blink 2s linear infinite;} 
+@keyframes blink {  
+	50% { color: #FBB; }
+	100% { color: maroon; } 
+}
+
+  .tabs {
+    font-size: 0;
+  }
+  .tabs>input[type="radio"] {
+    display: none;
+  }
+  .tabs>div {
+    /* скрыть контент по умолчанию */
+    display: none;
+    border: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+  #tab-btn-1:checked~#content-1,
+  #tab-btn-2:checked~#content-2,
+  #tab-btn-3:checked~#content-3 {
+    display: block;
+  }
+  .tabs>label {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    padding: 2px 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+  }
+  .tabs>label:not(:first-of-type) {
+    border-left: none;
+  }
+  .tabs>input[type="radio"]:checked+label {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+  }

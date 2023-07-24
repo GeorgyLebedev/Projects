@@ -1,0 +1,7 @@
+.out {font-size: 0.85em;  background:white; text-align:center;margin: 0 auto; max-width:70% ;border-collapse: collapse;}
+.tab {padding: 5px;border: 1px solid black;}
+img {height:200px; width:auto; text-align:left}
+hr {border-color:black; width:100%;border-width: 1px;}
+header{text-align:center;}
+h4 {text-align:center}
+footer {text-align:right; margin-top:8%; margin-right:15%;}
